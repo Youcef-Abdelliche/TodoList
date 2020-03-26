@@ -43,8 +43,12 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <h4>{{ item.text }}</h4>
                 <div class="float-right">
-                    <button type="button" class="btn btn-light btn-sm">Edit</button>
-                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <button type="button" class="btn btn-light btn-sm" name="edit_item">Edit</button>
+                    <div>
+                        <form action="delete/{{ item.id }}/" method="post">
+                            <button type="submit" class="btn btn-danger btn-sm" name="delete_todo_item">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </li>
         {% endfor %}
